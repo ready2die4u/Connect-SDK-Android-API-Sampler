@@ -1,17 +1,17 @@
 buildscript {
     repositories {
         google()
-        jcenter()
+        mavenCentral() // Replaced jcenter() with mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.0.1'
+        classpath 'com.android.tools.build:gradle:8.12.0' // Check for the latest stable version
     }
 }
 
 allprojects {
     repositories {
         google()
-        jcenter()
+        mavenCentral() // Replaced jcenter() with mavenCentral()
         maven { url "https://jitpack.io" }
     }
 }
@@ -20,6 +20,9 @@ allprojects {
 apply plugin: 'com.android.application'
 
 android {
+    // Add your application's package name here
+    namespace = "com.connectsdk.sampler" // Replace with your actual package name
+
     compileSdkVersion 31
 
     defaultConfig {
